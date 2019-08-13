@@ -17,6 +17,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 @Controller
 @RequestMapping
@@ -40,29 +43,33 @@ public class CustomerController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/recruiter")
     public String recruiter(Model model) {
+        model.addAttribute("user", new User());
         //model.addAttribute("//path", userToDto.convert(userService.get(id)));
         return "recruiterForm";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/homepage")
     public String user(Model model) {
+
+        //Set<User> users = userService.getAll();
+        //List<User> list = new ArrayList<>(users);
+
+        //model.addAttribute("users", list);
         return "index";
     }
 
-
-
-
     @RequestMapping(method = RequestMethod.POST, path = {"/recruiter"})
-    public String register(@Valid @ModelAttribute("user") User user, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+    public String register(@ModelAttribute("user") User user) {
 
-        if (bindingResult.hasErrors()) {
+       /* if (bindingResult.hasErrors()) {
             return "/404";
-        }
-
+        }*/
+       if (user == null){
+           return "404";
+       }
         userService.saveOrUpdate(user);
 
-        //redirectAttributes.addFlashAttribute("lastAction", "Saved " + registeredUser.getName() + " " + registeredUser.getLastName);
-        return "/homepage";
+        return "redirect:homepage";
     }
     /*
 

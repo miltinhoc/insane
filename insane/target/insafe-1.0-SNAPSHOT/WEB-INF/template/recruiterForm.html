@@ -77,7 +77,7 @@
       </div>
       <div class="form-group col-sm-12">
           <label for="First Name">First Name</label>
-          <input type="text" class="form-control" id="First Name" placeholder="First Name">
+          <input type="text" class="form-control" th:field="*{name}" id="First Name" placeholder="First Name">
       </div>
       <div class="form-group col-sm-12">
           <label for="First Name">Last Name</label>
@@ -85,19 +85,19 @@
       </div>
       <div class="form-group col-sm-12">
         <label for="inputEmail4">Email</label>
-        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+        <input type="email" class="form-control" th:field="*{email}" id="inputEmail4" placeholder="Email">
       </div>
       <div class="form-group col-sm-12">
         <label for="inputPassword4">Password</label>
-        <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+        <input type="password" class="form-control" th:field="*{password}" id="inputPassword4" placeholder="Password">
       </div>
       <div class="form-group col-sm-12">
           <label for="Country">Country</label>
-          <input type="text" class="form-control" id="Country" placeholder="Country">
+          <input type="text" class="form-control" th:field="*{country}" id="Country" placeholder="Country">
       </div>
       <div class="form-group col-sm-12">
           <label for="Age">Age</label>
-          <input type="text" class="form-control" id="Age" placeholder="Age">
+          <input type="text" class="form-control" th:field="*{age}" id="Age" placeholder="Age">
         </div>
     </div>
   <button type="submit" class="btn btn-primary">Sign in</button>
@@ -112,13 +112,6 @@
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
-
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
 
 </html>

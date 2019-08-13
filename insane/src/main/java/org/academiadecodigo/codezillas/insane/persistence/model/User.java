@@ -8,8 +8,6 @@ public class User extends AbstractUser{
     private String mainSkill;
     private AccountType accountType;
 
-
-
     public String getDisorder() {
         return disorder;
     }

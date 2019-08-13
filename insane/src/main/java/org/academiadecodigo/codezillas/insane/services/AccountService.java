@@ -11,6 +11,10 @@ public class AccountService implements  UserService{
     Set<User> usersAccounts = new LinkedHashSet<User>();
 
 
+    @Override
+    public Set<User> getAll(){
+        return usersAccounts;
+    }
 
     public User findById(Integer id) {
         for (User user : usersAccounts){

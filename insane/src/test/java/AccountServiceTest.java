@@ -1,11 +1,10 @@
 import org.academiadecodigo.codezillas.insane.persistence.model.User;
 import org.academiadecodigo.codezillas.insane.services.AccountService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AccountServiceTest {
-
-
 
     public static void main(String[] args) {
 
@@ -24,6 +23,14 @@ public class AccountServiceTest {
 
         accountService.saveOrUpdate(user);
 
+        List<User> list = new ArrayList<>(accountService.getAll());
+
+        //System.out.println(list);
+
+        for (User s :
+                list) {
+            System.out.println(s.getName());
+        }
         User test = accountService.findById(2);
         System.out.println(test.getName());
 
