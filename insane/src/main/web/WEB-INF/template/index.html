@@ -40,8 +40,12 @@
               </li>
             </ul>
           </div>
+
+          <div class="register pr-xl-3">
+              <button class="btn btn-primary my-2 my-sm-0" type="button" data-toggle="modal" data-target="#register">Register</button>
+          </div>
           
-          <button class="btn btn-primary my-2 my-sm-0" type="button" data-toggle="modal" data-target="#register">Register</button>
+          
           <button class="btn btn-primary my-2 my-sm-0" type="button" data-toggle="modal" data-target="#login">Login</button>
           
         </nav>
@@ -49,24 +53,32 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col">
-          <h1>(in)sane</h1>
+          <h1 class="display-1 text-center">(in)sane</h1>
       </div>
     </div>
   </div>
 
-  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-          <img src="..." class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="...">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+          <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/img/download3.jpeg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="..." class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="..." class="d-block w-100" alt="...">
+                </div>
+              </div>
+            </div>
       </div>
     </div>
   </div>
+  
+
   
   
   <div id="login" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -89,11 +101,11 @@
   </div>
 
   <div id="register" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-md">
       <div class="modal-content">
-        <div class="container-fluid">
+        <div class="container">
           <div class="row">
-            <div class="col">
+            <div class="col wrapper">
               <button class="btn btn-primary my-2 my-sm-0" type="button" data-toggle="modal" data-target="#user">User</button>
               <button class="btn btn-primary my-2 my-sm-0" type="button" data-toggle="modal" data-target="#recruiter">Recruiter</button>
             </div>
