@@ -4,10 +4,10 @@ import org.academiadecodigo.codezillas.insane.persistence.model.User;
 
 import java.util.List;
 
-public interface Dao {
+public interface Dao<T> {
 
-    User findById();
-    void saveOrUpdate();
-    void delete();
-    List<User> findBySkill();
+    T findById(Integer id);
+    List<T> findAll();
+    T saveOrUpdate(T accountModel);
+    void delete(Integer id);
 }

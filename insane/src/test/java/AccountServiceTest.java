@@ -17,7 +17,7 @@ public class AccountServiceTest {
 
         User user =  new User();
 
-        user.setName("Teste name");
+        user.setFirstName("Teste name");
         user.setCountry("Portugal");
         user.setMainSkill("Drawing");
         user.setId(2);
@@ -25,12 +25,12 @@ public class AccountServiceTest {
         accountService.saveOrUpdate(user);
 
         User test = accountService.findById(2);
-        System.out.println(test.getName());
+        System.out.println(test.getFirstName());
 
         List<User> skillUser = accountService.findBySkill("Drawing");
 
         for (User useri : skillUser){
-            System.out.println(useri.getName());
+            System.out.println(useri.getFirstName());
         }
 
     }

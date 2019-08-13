@@ -8,7 +8,7 @@ public class UserDtoToUser {
     public User convert(UserDto userDto){
         User user = new User();
 
-        user.setName(UserDto.getName());
+        user.setFirstName(UserDto.getName());
         user.setId(UserDto.getId());
         user.setEmail(UserDto.getEmail());
         user.setPassword(UserDto.getPassword());

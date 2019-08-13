@@ -10,33 +10,33 @@
     <!-- c3p0 database connection pool management -->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
 
-        <property name="driverClass" value="com.mysql.cj.jdbc.Driver"/>
-        <property name="jdbcUrl" value="jdbc:mysql://${prod.jdbc.host}/${prod.jdbc.database}?useSSL=false"/>
-        <property name="user" value="${prod.jdbc.username}"/>
-        <property name="password" value="${prod.jdbc.password}"/>
+        <property firstName="driverClass" value="com.mysql.cj.jdbc.Driver"/>
+        <property firstName="jdbcUrl" value="jdbc:mysql://${prod.jdbc.host}/${prod.jdbc.database}?useSSL=false"/>
+        <property firstName="user" value="${prod.jdbc.username}"/>
+        <property firstName="password" value="${prod.jdbc.password}"/>
 
         <!-- c3p0 database connection pool management properties -->
-        <property name="minPoolSize" value="${pool.min}"/>
-        <property name="maxPoolSize" value="${pool.max}"/>
-        <property name="acquireIncrement" value="1"/>
-        <property name="maxStatements" value="0"/>
+        <property firstName="minPoolSize" value="${pool.min}"/>
+        <property firstName="maxPoolSize" value="${pool.max}"/>
+        <property firstName="acquireIncrement" value="1"/>
+        <property firstName="maxStatements" value="0"/>
 
         <!-- destroy idle pool after 300ms -->
-        <property name="idleConnectionTestPeriod" value="300"/>
+        <property firstName="idleConnectionTestPeriod" value="300"/>
 
         <!-- destroy db connection if it fails to login after 7200ms -->
-        <property name="loginTimeout" value="7200"/>
+        <property firstName="loginTimeout" value="7200"/>
 
     </bean>
 
     <bean id="emFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 
-        <property name="dataSource" ref="dataSource"/>
-        <property name="packagesToScan" value="org.academiadecodigo.codezillas.insane.persistence.model"/>
-        <property name="jpaVendorAdapter">
+        <property firstName="dataSource" ref="dataSource"/>
+        <property firstName="packagesToScan" value="org.academiadecodigo.codezillas.insane.persistence.model"/>
+        <property firstName="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
         </property>
-        <property name="jpaProperties">
+        <property firstName="jpaProperties">
             <map>
                 <entry key="hibernate.show_sql" value="${prod.debug}" />
                 <entry key="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>

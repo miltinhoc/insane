@@ -5,14 +5,14 @@
 
     <!-- Thymeleaf View Resolver, implements Spring ViewResolver interface -->
     <bean id="viewResolver" class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
-        <property name="templateEngine" ref="templateEngine"/>
-        <property name="characterEncoding" value="UTF-8"/>
-        <property name="contentType" value="text/html; charset=UTF-8"/>
+        <property firstName="templateEngine" ref="templateEngine"/>
+        <property firstName="characterEncoding" value="UTF-8"/>
+        <property firstName="contentType" value="text/html; charset=UTF-8"/>
     </bean>
 
     <!-- Thymeleaf Template Engine (Spring4-specific version) -->
     <bean id="templateEngine" class="org.thymeleaf.spring4.SpringTemplateEngine">
-        <property name="templateResolvers">
+        <property firstName="templateResolvers">
             <set>
                 <ref bean="templateResolver"/>
             </set>
@@ -21,11 +21,11 @@
 
     <!-- Thymeleaf template resolver -->
     <bean id="templateResolver" class="org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver">
-        <property name="prefix" value="/WEB-INF/templates/"/>
-        <property name="suffix" value=".html"/>
-        <property name="templateMode" value="HTML"/>
-        <property name="cacheable" value="false"/>
-        <property name="characterEncoding" value="UTF-8"/>
+        <property firstName="prefix" value="/WEB-INF/templates/"/>
+        <property firstName="suffix" value=".html"/>
+        <property firstName="templateMode" value="HTML"/>
+        <property firstName="cacheable" value="false"/>
+        <property firstName="characterEncoding" value="UTF-8"/>
     </bean>
 
 </beans>

@@ -6,7 +6,6 @@ public class User extends AbstractUser{
 
     private String disorder;
     private String mainSkill;
-    private AccountType accountType;
 
 
 
@@ -26,11 +25,5 @@ public class User extends AbstractUser{
         this.mainSkill = mainSkill;
     }
 
-    public AccountType getAccountType() {
-        return accountType;
-    }
 
-    public void setAccountType(AccountType accountType) {
-        this.accountType = accountType;
-    }
 }

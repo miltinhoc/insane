@@ -46,7 +46,7 @@ public class CustomerController {
 
     @RequestMapping(method = RequestMethod.GET, path = "//path")
     public String user(@PathVariable Integer id, Model model) {
-        model.addAttribute("//path", userToDto.convert(userService.get(id)));
+        model.addAttribute("//path", userToDto.convert(userService.findById(id)));
         return "//path";
     }
 
@@ -59,7 +59,7 @@ public class CustomerController {
 
         User registeredUser = userService.saveOrUpdate(userToDto.convert(user));
 
-        redirectAttributes.addFlashAttribute("lastAction", "Saved " + registeredUser.getName() + " " + registeredUser.getLastName);
+        redirectAttributes.addFlashAttribute("lastAction", "Saved " + registeredUser.getFirstName() + " " + registeredUser.getLastName());
         return "//path" + registeredUser.getId();
     }
 
@@ -72,7 +72,7 @@ public class CustomerController {
 
         User userLogged = userService.saveOrUpdate(userToDto.convert(user));
 
-        redirectAttributes.addFlashAttribute("lastAction", "Logged in" + userLogged.getName() + " " + userLogged.getLastName);
+        redirectAttributes.addFlashAttribute("lastAction", "Logged in" + userLogged.getFirstName() + " " + userLogged.getLastName());
         return "//path" + userLogged.getId();
     }
 
@@ -84,7 +84,7 @@ public class CustomerController {
 
     @RequestMapping(method = RequestMethod.GET, path = "//path")
     public String showAllUsers(Model model) {
-        model.addAttribute("//path", UserToUserDto.convert(userService.list()));
+        model.addAttribute("//path", UserToUserDto.convert(userService.findBySkill())); //TODO: lista de users
         return "//path";
     }
 
