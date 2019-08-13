@@ -31,6 +31,6 @@ public class UserToUserDto {
             userDto.setPassword(user.getPassword());
             userDto.setSummary(user.getSummary());
 
-            return userDto(user);
+            return userDto;
         }
 }
