@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface UserService {
 
+    User findById(Integer id);
     void delete(User user);
     void saveOrUpdate(User user);
     List<User> findBySkill(String skill);

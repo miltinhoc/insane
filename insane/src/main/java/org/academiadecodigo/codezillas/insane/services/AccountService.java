@@ -6,8 +6,18 @@ import java.util.*;
 
 public class AccountService implements  UserService{
 
-    //List<User> usersAccounts;
     Set<User> usersAccounts = new LinkedHashSet<User>();
+
+
+
+    public User findById(Integer id) {
+        for (User user : usersAccounts){
+            if (user.getId().equals(id)){
+                return user;
+            }
+        }
+        return null;
+    }
 
     public void delete(User user) {
         if (!usersAccounts.isEmpty()){
