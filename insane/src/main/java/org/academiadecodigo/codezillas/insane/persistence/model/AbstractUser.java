@@ -6,9 +6,11 @@ import java.io.File;
 
 public class AbstractUser {
 
+
     private AccountType accountType;
     private int id;
-    private String name;
+    private String firstName;
+    private String lastName;
     private String email;
     private String password;
     private String country;
@@ -33,12 +35,12 @@ public class AbstractUser {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getEmail() {
@@ -87,5 +89,13 @@ public class AbstractUser {
 
     public void setSummary(String summary) {
         this.summary = summary;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }

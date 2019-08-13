@@ -1,5 +1,7 @@
 package org.academiadecodigo.codezillas.insane.dtos;
 
+import org.academiadecodigo.codezillas.insane.AccountType;
+
 import javax.validation.constraints.*;
 
 public class UserDto {
@@ -35,6 +37,8 @@ public class UserDto {
     @Email
     @NotBlank(message = "Email is mandatory")
     private String email;
+
+    private AccountType accountType;
 
     public String getDisorder() {
         return disorder;
@@ -117,4 +121,8 @@ public class UserDto {
     }
 
     private String country;
+
+    public AccountType getAccountType() {
+        return accountType;   //todo  Check
+    }
 }

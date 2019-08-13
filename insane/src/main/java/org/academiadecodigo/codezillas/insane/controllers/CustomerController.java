@@ -1,10 +1,8 @@
 package org.academiadecodigo.codezillas.insane.controllers;
 
-import org.academiadecodigo.codezillas.insane.AccountType;
-import org.academiadecodigo.codezillas.insane.converters.UserDtoToUser;
-
-import org.academiadecodigo.codezillas.insane.converters.UserToUserDto;
 import org.academiadecodigo.codezillas.insane.dtos.UserDto;
+import org.academiadecodigo.codezillas.insane.dtos.UserDtoToUser;
+import org.academiadecodigo.codezillas.insane.dtos.UserToUserDto;
 import org.academiadecodigo.codezillas.insane.persistence.model.User;
 import org.academiadecodigo.codezillas.insane.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,10 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
@@ -29,6 +25,7 @@ public class CustomerController {
     private UserService userService;
 
     private UserToUserDto userToDto;
+    private UserDtoToUser userDtoToUser;
     private UserDtoToUser user;
 
     @Autowired
@@ -41,6 +38,16 @@ public class CustomerController {
         this.userToDto = userToDto;
     }
 
+    @Autowired
+    public void setUserToUserDto(UserDtoToUser userDtoToUser) {
+        this.userDtoToUser = userDtoToUser;
+    }
+
+
+    @Autowired
+    public void setUser(UserDtoToUser user) {
+        this.user = user;
+    }
 
     @RequestMapping(method = RequestMethod.GET, path = "/recruiter")
     public String recruiter(Model model) {
@@ -52,15 +59,15 @@ public class CustomerController {
     @RequestMapping(method = RequestMethod.GET, path = "/homepage")
     public String user(Model model) {
 
-        //Set<User> users = userService.getAll();
-        //List<User> list = new ArrayList<>(users);
+        Set<User> users = userService.getAll();
+        List<User> list = new ArrayList<>(users);
 
-        //model.addAttribute("users", list);
+        model.addAttribute("users", list);
         return "index";
     }
 
     @RequestMapping(method = RequestMethod.POST, path = {"/recruiter"})
-    public String register(@ModelAttribute("user") UserDto userDto) {
+    public String register(@Valid @ModelAttribute("user") UserDto userDto, BindingResult bindingResult) {
 
        /* if (bindingResult.hasErrors()) {
             return "/404";
@@ -68,7 +75,7 @@ public class CustomerController {
        if (user == null){
            return "404";
        }
-        userService.saveOrUpdate(UserDtoToUser(user));
+        userService.saveOrUpdate(userDtoToUser.user(userDto));
 
         return "redirect:homepage";
     }
