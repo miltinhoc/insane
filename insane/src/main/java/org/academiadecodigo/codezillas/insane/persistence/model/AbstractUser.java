@@ -4,7 +4,7 @@ import org.academiadecodigo.codezillas.insane.AccountType;
 
 import java.io.File;
 
-public class AbstractAccount {
+public class AbstractUser {
 
     private AccountType accountType;
     private int id;

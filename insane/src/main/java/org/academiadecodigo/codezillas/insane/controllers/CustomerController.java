@@ -1,6 +1,7 @@
 package org.academiadecodigo.codezillas.insane.controllers;
 
 import org.academiadecodigo.codezillas.insane.converters.UserDtoToUser;
+import org.academiadecodigo.codezillas.insane.converters.UserToUserDto;
 import org.academiadecodigo.codezillas.insane.services.UserService;
 
 public class CustomerController {
