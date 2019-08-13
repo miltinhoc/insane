@@ -17,10 +17,14 @@ public class UserDto {
     private String mainSkill;
 
     private Integer id;
-    @NotNull(message = "Name is mandatory")
-    @NotBlank(message = "Name is mandatory")
+    @NotNull(message = "firstName is mandatory")
+    @NotBlank(message = "firstName is mandatory")
     @Size(min = 3, max = 64)
-    private String name;
+    private String firstName;
+    @NotNull(message = "lastName is mandatory")
+    @NotBlank(message = "lastName is mandatory")
+    @Size(min = 3, max = 64)
+    private String lastName;
     @NotNull(message = "Password is mandatory")
     @NotBlank(message = "Password is mandatory")
     @Size(min = 3, max = 64)
@@ -64,12 +68,20 @@ public class UserDto {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getPassword() {
