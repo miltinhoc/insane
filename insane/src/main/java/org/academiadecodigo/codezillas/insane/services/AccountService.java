@@ -1,9 +1,11 @@
 package org.academiadecodigo.codezillas.insane.services;
 
 import org.academiadecodigo.codezillas.insane.persistence.model.User;
+import org.springframework.stereotype.Service;
 
 import java.util.*;
 
+@Service
 public class AccountService implements  UserService{
 
     Set<User> usersAccounts = new LinkedHashSet<User>();
@@ -12,7 +14,7 @@ public class AccountService implements  UserService{
 
     public User findById(Integer id) {
         for (User user : usersAccounts){
-            if (user.getId().equals(id)){
+            if (user.getId() == id){
                 return user;
             }
         }

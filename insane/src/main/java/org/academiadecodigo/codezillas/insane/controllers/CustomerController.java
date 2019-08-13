@@ -32,36 +32,39 @@ public class CustomerController {
         this.userService = userService;
     }
 
-    @Autowired
+    /*@Autowired
     public void setUserToDto(UserToUserDto userToDto) {
         this.userToDto = userToDto;
-    }
-
-
-    /*@RequestMapping(method = RequestMethod.GET, path = {"//path"})
-    public String recruiter(@PathVariable Integer id, Model model) {
-        model.addAttribute("//path", userToDto.convert(userService.get(id)));
-        return "//path";
     }*/
 
-    @RequestMapping(method = RequestMethod.GET, path = "//path")
-    public String user(@PathVariable Integer id, Model model) {
-        model.addAttribute("//path", userToDto.convert(userService.get(id)));
-        return "//path";
+
+    @RequestMapping(method = RequestMethod.GET, path = "/recruiter")
+    public String recruiter(Model model) {
+        //model.addAttribute("//path", userToDto.convert(userService.get(id)));
+        return "recruiterForm";
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = {"//path"})
-    public String register(@Valid @ModelAttribute("//path") User user, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+    @RequestMapping(method = RequestMethod.GET, path = "/homepage")
+    public String user(Model model) {
+        return "index";
+    }
+
+
+
+
+    @RequestMapping(method = RequestMethod.POST, path = {"/recruiter"})
+    public String register(@Valid @ModelAttribute("user") User user, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
         if (bindingResult.hasErrors()) {
-            return "//path";
+            return "/404";
         }
 
-        User registeredUser = userService.saveOrUpdate(userToDto.convert(user));
+        userService.saveOrUpdate(user);
 
-        redirectAttributes.addFlashAttribute("lastAction", "Saved " + registeredUser.getName() + " " + registeredUser.getLastName);
-        return "//path" + registeredUser.getId();
+        //redirectAttributes.addFlashAttribute("lastAction", "Saved " + registeredUser.getName() + " " + registeredUser.getLastName);
+        return "/homepage";
     }
+    /*
 
     @RequestMapping(method = RequestMethod.POST, path = {"//path"})
     public String login(@Valid @ModelAttribute("//path") User user, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
@@ -99,7 +102,7 @@ public class CustomerController {
         return "//path";
 
 
-    }
+    }*/
 
 
 }
