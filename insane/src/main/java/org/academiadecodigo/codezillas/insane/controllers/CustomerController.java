@@ -17,6 +17,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 @Controller
 @RequestMapping
@@ -32,36 +35,43 @@ public class CustomerController {
         this.userService = userService;
     }
 
-    @Autowired
+    /*@Autowired
     public void setUserToDto(UserToUserDto userToDto) {
         this.userToDto = userToDto;
-    }
-
-
-    /*@RequestMapping(method = RequestMethod.GET, path = {"//path"})
-    public String recruiter(@PathVariable Integer id, Model model) {
-        model.addAttribute("//path", userToDto.convert(userService.get(id)));
-        return "//path";
     }*/
 
-    @RequestMapping(method = RequestMethod.GET, path = "//path")
-    public String user(@PathVariable Integer id, Model model) {
-        model.addAttribute("//path", userToDto.convert(userService.findById(id)));
-        return "//path";
+
+    @RequestMapping(method = RequestMethod.GET, path = "/recruiter")
+    public String recruiter(Model model) {
+        model.addAttribute("user", new User());
+        //model.addAttribute("//path", userToDto.convert(userService.get(id)));
+        return "recruiterForm";
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = {"//path"})
-    public String register(@Valid @ModelAttribute("//path") User user, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+    @RequestMapping(method = RequestMethod.GET, path = "/homepage")
+    public String user(Model model) {
 
-        if (bindingResult.hasErrors()) {
-            return "//path";
-        }
+        Set<User> users = userService.getAll();
+        List<User> list = new ArrayList<>(users);
 
-        User registeredUser = userService.saveOrUpdate(userToDto.convert(user));
-
-        redirectAttributes.addFlashAttribute("lastAction", "Saved " + registeredUser.getFirstName() + " " + registeredUser.getLastName());
-        return "//path" + registeredUser.getId();
+        model.addAttribute("users", list);
+        return "index";
     }
+
+    @RequestMapping(method = RequestMethod.POST, path = {"/recruiter"})
+    public String register(@ModelAttribute("user") User user) {
+
+       /* if (bindingResult.hasErrors()) {
+            return "/404";
+        }*/
+       if (user == null){
+           return "404";
+       }
+        userService.saveOrUpdate(user);
+
+        return "redirect:homepage";
+    }
+    /*
 
     @RequestMapping(method = RequestMethod.POST, path = {"//path"})
     public String login(@Valid @ModelAttribute("//path") User user, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
@@ -72,7 +82,7 @@ public class CustomerController {
 
         User userLogged = userService.saveOrUpdate(userToDto.convert(user));
 
-        redirectAttributes.addFlashAttribute("lastAction", "Logged in" + userLogged.getFirstName() + " " + userLogged.getLastName());
+        redirectAttributes.addFlashAttribute("lastAction", "Logged in" + userLogged.getName() + " " + userLogged.getLastName);
         return "//path" + userLogged.getId();
     }
 
@@ -84,7 +94,7 @@ public class CustomerController {
 
     @RequestMapping(method = RequestMethod.GET, path = "//path")
     public String showAllUsers(Model model) {
-        model.addAttribute("//path", UserToUserDto.convert(userService.findBySkill())); //TODO: lista de users
+        model.addAttribute("//path", UserToUserDto.convert(userService.list()));
         return "//path";
     }
 
@@ -99,7 +109,7 @@ public class CustomerController {
         return "//path";
 
 
-    }
+    }*/
 
 
 }
