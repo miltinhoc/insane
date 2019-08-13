@@ -4,6 +4,7 @@ import org.academiadecodigo.codezillas.insane.AccountType;
 import org.academiadecodigo.codezillas.insane.converters.UserDtoToUser;
 
 import org.academiadecodigo.codezillas.insane.converters.UserToUserDto;
+import org.academiadecodigo.codezillas.insane.dtos.UserDto;
 import org.academiadecodigo.codezillas.insane.persistence.model.User;
 import org.academiadecodigo.codezillas.insane.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,15 +36,15 @@ public class CustomerController {
         this.userService = userService;
     }
 
-    /*@Autowired
+    @Autowired
     public void setUserToDto(UserToUserDto userToDto) {
         this.userToDto = userToDto;
-    }*/
+    }
 
 
     @RequestMapping(method = RequestMethod.GET, path = "/recruiter")
     public String recruiter(Model model) {
-        model.addAttribute("user", new User());
+        model.addAttribute("user", new UserDto());
         //model.addAttribute("//path", userToDto.convert(userService.get(id)));
         return "recruiterForm";
     }
@@ -59,7 +60,7 @@ public class CustomerController {
     }
 
     @RequestMapping(method = RequestMethod.POST, path = {"/recruiter"})
-    public String register(@ModelAttribute("user") User user) {
+    public String register(@ModelAttribute("user") UserDto userDto) {
 
        /* if (bindingResult.hasErrors()) {
             return "/404";
@@ -67,7 +68,7 @@ public class CustomerController {
        if (user == null){
            return "404";
        }
-        userService.saveOrUpdate(user);
+        userService.saveOrUpdate(UserDtoToUser(user));
 
         return "redirect:homepage";
     }
