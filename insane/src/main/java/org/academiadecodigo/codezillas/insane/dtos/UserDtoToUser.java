@@ -31,6 +31,7 @@ public class UserDtoToUser {
         user.setId(userDto.getId());
         user.setPassword(userDto.getPassword());
         user.setSummary(userDto.getSummary());
+        user.setAccountType(userDto.getAccountType());
 
         return user;
     }
