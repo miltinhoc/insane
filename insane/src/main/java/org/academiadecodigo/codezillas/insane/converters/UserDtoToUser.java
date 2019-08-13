@@ -11,8 +11,10 @@ public class UserDtoToUser {
         user.setName(UserDto.getName());
         user.setId(UserDto.getId());
         user.setEmail(UserDto.getEmail());
-        user.set
-
+        user.setPassword(UserDto.getPassword());
+        user.setAccountType(UserDto.getAccountType());
+        user.setDisorder(UserDto.getDisorder());
+        user.setCountry(UserDto.getCountry());
         return user;
     }
 }
