@@ -2,34 +2,46 @@ package org.academiadecodigo.codezillas.insane.dtos;
 
 import javax.validation.constraints.*;
 
-public class RecuiterDto {
+public class RecruiterDto {
 
     @NotNull(message = "Companyname is mandatory")
     @NotBlank(message = "Companyname is mandatory")
     @Size(min = 3, max = 64)
     private String companyName;
+
     //@NotNull(message = "Summary is mandatory")
     //@NotBlank(message = "Summary is mandatory")
     @Size(min = 50, max = 200)
     private String summary;
+
     @NotNull(message = "Search skill is mandatory")
     @NotBlank(message = "Search skill is mandatory")
     @Size(min = 20, max = 64)
     private String searchSkill;
+
     private Integer id;
+
     @NotNull(message = "Name is mandatory")
     @NotBlank(message = "Name is mandatory")
     @Size(min = 3, max = 64)
-    private String name;
+    private String firstName;
+
     @NotNull(message = "Password is mandatory")
     @NotBlank(message = "Password is mandatory")
     @Size(min = 3, max = 64)
     private String password;
 
+    @NotNull(message = "Name is mandatory")
+    @NotBlank(message = "Name is mandatory")
+    @Size(min = 3, max = 64)
+    private String lastName;
+
     private Integer age;
+
     @Email
     @NotBlank(message = "Email is mandatory")
     private String email;
+
     @NotNull(message = "Country is mandatory")
     @NotBlank(message = "Country is mandatory")
     @Size(min = 3, max = 64)
@@ -67,12 +79,20 @@ public class RecuiterDto {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String name) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getPassword() {
