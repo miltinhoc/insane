@@ -1,6 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="">
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="utf-8">
   <title></title>
@@ -79,21 +79,18 @@
     </div>
   </div>
   
-
-  
-  
   <div id="login" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-md">
       <div class="modal-content">
-        <form class="p-3">
+        <form class="p-3" method="post" th:action="@{'/login'}" th:object="${userLogin}">
           <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <input type="email" th:field="*{email}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
             <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <input type="password" th:field="*{password}" class="form-control" id="exampleInputPassword1" placeholder="Password">
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
@@ -129,7 +126,8 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col">
-                <form class="mt-4 mb-4">
+              <!-- users -->
+                <form class="mt-4 mb-4"  method="post" th:action="@{'/userReg'}" th:object="${userReg}">>
                   <div class="form-row">
                     <div class="form-group col-sm-12">
                         <label for="First Name">First Name</label>
@@ -171,31 +169,31 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col">
-                <form class="mt-4 mb-4">
+                <form class="mt-4 mb-4" method="post" th:action="@{'/recruiter'}" th:object="${recruiter}">
                   <div class="form-row">
                     <div class="form-group col-sm-12">
                         <label for="First Name">First Name</label>
-                        <input type="text" class="form-control" id="First Name" placeholder="First Name">
+                        <input type="text" class="form-control" th:field="*{firstName}" id="First Name2" placeholder="First Name">
                     </div>
                     <div class="form-group col-sm-12">
                         <label for="First Name">Last Name</label>
-                        <input type="text" class="form-control" id="Last Name" placeholder="Last Name">
+                        <input type="text" class="form-control" th:field="*{lastName}" id="Last Name2" placeholder="Last Name">
                     </div>
                     <div class="form-group col-sm-12">
                       <label for="inputEmail4">Email</label>
-                      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                      <input type="email" class="form-control" th:field="*{email}" id="inputEmail42" placeholder="Email">
                     </div>
                     <div class="form-group col-sm-12">
                       <label for="inputPassword4">Password</label>
-                      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                      <input type="password" class="form-control" th:field="*{password}" id="inputPassword42" placeholder="Password">
                     </div>
                     <div class="form-group col-sm-12">
                         <label for="Country">Country</label>
-                        <input type="text" class="form-control" id="Country" placeholder="Country">
+                        <input type="text" class="form-control" th:field="*{country}" id="Country2" placeholder="Country">
                     </div>
                     <div class="form-group col-sm-12">
                         <label for="Age">Age</label>
-                        <input type="text" class="form-control" id="Age" placeholder="Age">
+                        <input type="text" class="form-control" th:field="*{age}" id="Age2" placeholder="Age">
                       </div>
                   </div>
                 <button type="submit" class="btn btn-primary">Sign in</button>
@@ -206,6 +204,18 @@
       </div>
     </div>
   </div>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Age</th>
+    </tr>
+    <tr th:each="user : ${users}">
+      <td th:text="${user.firstName}"></td>
+      <td th:text="${user.id}"></td>
+      <td th:text="${user.email}"></td>
+    </tr>
+  </table>
 
   <script src="js/vendor/modernizr-3.7.1.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -213,14 +223,6 @@
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
-  
-
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
 
 </html>

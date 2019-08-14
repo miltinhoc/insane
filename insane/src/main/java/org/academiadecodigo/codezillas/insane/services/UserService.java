@@ -8,7 +8,8 @@ import java.util.Set;
 
 public interface UserService {
 
-    public Set<User> getAll();
+    boolean authenticate(String email, String password);
+    Set<User> getAll();
     User findById(Integer id);
     void delete(User user);
     void saveOrUpdate(User user);

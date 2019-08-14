@@ -49,4 +49,16 @@ public class AccountService implements  UserService{
        return usersFound;
     }
 
+    @Override
+    public boolean authenticate(String email, String password) {
+        //User user = null;
+
+        for (User u :
+                usersAccounts) {
+            if (u.getEmail().equals(email) && u.getPassword().equals(password)) {
+                return true; //user = u;
+            }
+        }
+        return false; //user;
+    }
 }

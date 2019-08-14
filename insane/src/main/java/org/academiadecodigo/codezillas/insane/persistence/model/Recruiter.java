@@ -1,5 +1,6 @@
 package org.academiadecodigo.codezillas.insane.persistence.model;
 
+
 public class Recruiter extends AbstractUser{
 
     private String companyName;

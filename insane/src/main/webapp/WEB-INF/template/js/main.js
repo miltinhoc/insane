@@ -1,0 +1,1 @@
+//$('#bd-example-modal-lg').modal(options)

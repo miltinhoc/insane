@@ -46,7 +46,7 @@ In some situations this description is used as a part of the snippet
 shown in the search results.
 
 ```html
-<meta firstName="description" content="This is a description">
+<meta name="description" content="This is a description">
 ```
 
 Google's [Create good meta descriptions](https://support.google.com/webmasters/answer/35624?hl=en#meta-descriptions)
@@ -61,7 +61,7 @@ MDN Web Docs](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_m
 HTML5 Boilerplate comes with a simple setup that strikes a good balance for general use cases.
 
 ```html
-<meta firstName="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
 If you want to take advantage of edge-to-edge displays of iPhone X/XS/XR you can do

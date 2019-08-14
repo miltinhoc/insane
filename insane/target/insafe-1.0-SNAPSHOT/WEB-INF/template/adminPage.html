@@ -1,6 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="">
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="utf-8">
   <title></title>
@@ -27,7 +27,7 @@
   <!-- Add your site or application content here -->
   <div class="container-fluid">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="#">(in) Sane</a>
+          <a class="navbar-brand" href="#">(in)sane</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -51,16 +51,57 @@
           
         </nav>
   </div>
-  <div class="container profile">
+  <div class="container">
+    <!-- ß -->
+    <!-- <div class="search row">
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div> -->
     <div class="row">
-        <div class="col-2 photo">
-            
+        <div class="col">
+            <h1>Profile</h1>
         </div>
-        <div class="col-10 data">
-
+    </div>
+    <div class="row">
+        <div class="form-group col-4">
+            <label for="First Name">First Name</label>
+            <input type="text" class="form-control" id="First Name" placeholder="">
         </div>
-        <div>
-            
+        <div class="form-group col-4">
+            <label for="Last Name">Last Name</label>
+            <input type="text" class="form-control" id="Last Name" placeholder="">
+        </div>
+        <div class="form-group col-sm-4">
+            <label for="Photo">Photo</label>
+            <input type="text" class="form-control" id="Photo" placeholder="">
+        </div>
+    </div>
+    <div class="row"> 
+        <div class="form-group col-4">
+            <label for="Skill">Skill</label>
+            <input type="text" class="form-control" id="Skill" placeholder="">
+        </div>
+        <div class="form-group col-4">
+            <label for="inputEmail4">Email</label>
+            <input type="email" class="form-control" id="inputEmail4" placeholder="">
+        </div>
+    </div>
+    <div class="row"> 
+            <div class="form-group col-4">
+                <label for="Country">Country</label>
+                <input type="text" class="form-control" id="Country" placeholder="">
+            </div>
+            <div class="form-group col-4">
+                <label for="Age">Age</label>
+                <input type="text" class="form-control" id="Age" placeholder="">
+            </div>
+        </div>
+    <div class="row">    
+        <div class="form-group col-sm-8">
+            <label for="Summary">Summary</label>
+            <input type="text" class="form-control" id="Summary" placeholder="">
         </div>
     </div>
   </div>

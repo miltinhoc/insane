@@ -4,7 +4,6 @@ import org.academiadecodigo.codezillas.insane.persistence.model.Recruiter;
 
 public class RecruiterDtoToRecruiter {
 
-    @Override
     public Recruiter recruiterDto(RecruiterDto recruiterDto){
         Recruiter recruiter = new Recruiter();
 
