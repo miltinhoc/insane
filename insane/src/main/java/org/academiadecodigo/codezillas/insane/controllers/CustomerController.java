@@ -1,9 +1,6 @@
 package org.academiadecodigo.codezillas.insane.controllers;
 
 import org.academiadecodigo.codezillas.insane.AccountType;
-import org.academiadecodigo.codezillas.insane.converters.UserDtoToUser;
-
-import org.academiadecodigo.codezillas.insane.converters.UserToUserDto;
 import org.academiadecodigo.codezillas.insane.persistence.model.User;
 import org.academiadecodigo.codezillas.insane.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +24,8 @@ public class CustomerController {
 
     private UserService userService;
 
-    private UserToUserDto userToDto;
-    private UserDtoToUser user;
+//    private UserToUserDto userToDto;
+  //  private UserDtoToUser user;
 
     @Autowired
     public void setUserService(UserService userService) {

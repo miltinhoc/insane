@@ -1,8 +1,7 @@
 package org.academiadecodigo.codezillas.insane.services;
 
-import org.academiadecodigo.codezillas.insane.converters.UserToUserDto;
+
 import org.academiadecodigo.codezillas.insane.persistence.model.User;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Set;
