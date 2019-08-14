@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -79,34 +80,33 @@ public class CustomerController {
 
         return "redirect:homepage";
     }
-    /*
 
-    @RequestMapping(method = RequestMethod.POST, path = {"//path"})
-    public String login(@Valid @ModelAttribute("//path") User user, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+    @RequestMapping(method = RequestMethod.POST, path = {"/path"})
+    public String login(@Valid @ModelAttribute("/path") User user, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
-            return "//path";
+            return "path";
         }
 
         User userLogged = userService.saveOrUpdate(userToDto.convert(user));
 
-        redirectAttributes.addFlashAttribute("lastAction", "Logged in" + userLogged.getName() + " " + userLogged.getLastName);
-        return "//path" + userLogged.getId();
+        //redirectAttributes.addFlashAttribute("lastAction", "Logged in" + userLogged.getName() + " " + userLogged.getLastName);
+        return "path" + userLogged.getId();
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "//path")
+    @RequestMapping(method = RequestMethod.GET, path = "/path")
     public String homePage(@PathVariable Model model) {
-        return "//path";
+        return "path";
     }
 
 
-    @RequestMapping(method = RequestMethod.GET, path = "//path")
+    @RequestMapping(method = RequestMethod.GET, path = "/path")
     public String showAllUsers(Model model) {
         model.addAttribute("//path", UserToUserDto.convert(userService.list()));
-        return "//path";
+        return "path";
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "//path")
+    @RequestMapping(method = RequestMethod.GET, path = "/path")
     public String showUserById(@PathVariable Integer id, Model model) {
 
         User user = userService.findById(id);
@@ -114,10 +114,10 @@ public class CustomerController {
         model.addAttribute("user", userToDto.convert(user));
         model.addAttribute("accountTypes", AccountType.list());
 
-        return "//path";
+        return "path";
 
 
-    }*/
+    }
 
 
 }
