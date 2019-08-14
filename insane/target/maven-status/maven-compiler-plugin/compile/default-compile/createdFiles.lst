@@ -1,2 +1,4 @@
 org/academiadecodigo/codezillas/insane/dtos/UserToUserDto.class
 org/academiadecodigo/codezillas/insane/dtos/UserDtoToUser.class
+org/academiadecodigo/codezillas/insane/session/SessionDetails.class
+org/academiadecodigo/codezillas/insane/Config.class

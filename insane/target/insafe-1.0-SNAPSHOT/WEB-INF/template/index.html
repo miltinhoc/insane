@@ -1,15 +1,16 @@
 <!doctype html>
 <html class="no-js" lang="">
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>(In)Sane</title>
   <meta name="(in)sane" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
+  <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
   <!-- Place favicon.ico in the root directory -->
 
   <link rel="stylesheet" href="css/normalize.css">
@@ -33,7 +34,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
@@ -53,7 +54,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col">
-          <h1 class="display-1 text-center">(in)sane</h1>
+          <h1 class="display-1 text-center">(in) SANE</h1>
       </div>
     </div>
   </div>
@@ -82,9 +83,9 @@
   
   
   <div id="login" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-md">
       <div class="modal-content">
-        <form>
+        <form class="p-3">
           <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -104,11 +105,18 @@
     <div class="modal-dialog modal-md">
       <div class="modal-content">
         <div class="container">
-          <div class="row">
-            <div class="col wrapper">
-              <button class="btn btn-primary my-2 my-sm-0" type="button" data-toggle="modal" data-target="#user">User</button>
-              <button class="btn btn-primary my-2 my-sm-0" type="button" data-toggle="modal" data-target="#recruiter">Recruiter</button>
+          <div class="row modal-body modal-wrapper">
+            <div class="col">
+              <p class="text-center mt-5">Modal body text goes here.</p>
             </div>
+          </div>
+          <div class="row">
+            <div class="col-6 buttonUserWrapper">
+              <button class="buttonUser btn btn-primary my-2 my-sm-0" type="button" data-toggle="modal" data-target="#user">User</button>
+          </div>
+          <div class="col-6 buttonRegisterWrapper">
+            <button class="buttonRegister btn btn-primary my-2 my-sm-0" type="button" data-toggle="modal" data-target="#recruiter">Recruiter</button>
+          </div>
           </div>
         </div>
       </div>
@@ -116,36 +124,36 @@
   </div>
 
   <div id="user" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-md">
       <div class="modal-content">
         <div class="container-fluid">
           <div class="row">
             <div class="col">
-                <form>
+                <form class="mt-4 mb-4">
                   <div class="form-row">
                     <div class="form-group col-sm-12">
                         <label for="First Name">First Name</label>
-                        <input type="text" class="form-control" id="First Name" placeholder="First Name">
+                        <input type="text" class="form-control" id="FirstName" placeholder="First Name">
                     </div>
                     <div class="form-group col-sm-12">
                         <label for="First Name">Last Name</label>
-                        <input type="text" class="form-control" id="Last Name" placeholder="Last Name">
+                        <input type="text" class="form-control" id="LastName" placeholder="Last Name">
                     </div>
                     <div class="form-group col-sm-12">
                       <label for="inputEmail4">Email</label>
-                      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                      <input type="email" class="form-control" id="inputEmail" placeholder="Email">
                     </div>
                     <div class="form-group col-sm-12">
                       <label for="inputPassword4">Password</label>
-                      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
                     </div>
                     <div class="form-group col-sm-12">
                         <label for="Country">Country</label>
-                        <input type="text" class="form-control" id="Country" placeholder="Country">
+                        <input type="text" class="form-control" id="Country2" placeholder="Country">
                     </div>
                     <div class="form-group col-sm-12">
                         <label for="Age">Age</label>
-                        <input type="text" class="form-control" id="Age" placeholder="Age">
+                        <input type="text" class="form-control" id="Age2" placeholder="Age">
                       </div>
                   </div>
                 <button type="submit" class="btn btn-primary">Sign in</button>
@@ -158,12 +166,12 @@
   </div>
 
   <div id="recruiter" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-md">
       <div class="modal-content">
         <div class="container-fluid">
           <div class="row">
             <div class="col">
-                <form>
+                <form class="mt-4 mb-4">
                   <div class="form-row">
                     <div class="form-group col-sm-12">
                         <label for="First Name">First Name</label>
@@ -205,14 +213,6 @@
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
-  
-
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
 
 </html>

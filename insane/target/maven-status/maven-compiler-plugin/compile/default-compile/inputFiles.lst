@@ -4,10 +4,12 @@
 /Users/codecadet/Desktop/insave/insane/insane/src/main/java/org/academiadecodigo/codezillas/insane/controllers/CustomerController.java
 /Users/codecadet/Desktop/insave/insane/insane/src/main/java/org/academiadecodigo/codezillas/insane/persistence/daos/jpa/UserDao.java
 /Users/codecadet/Desktop/insave/insane/insane/src/main/java/org/academiadecodigo/codezillas/insane/AccountType.java
+/Users/codecadet/Desktop/insave/insane/insane/src/main/java/org/academiadecodigo/codezillas/insane/Config.java
 /Users/codecadet/Desktop/insave/insane/insane/src/main/java/org/academiadecodigo/codezillas/insane/persistence/model/User.java
 /Users/codecadet/Desktop/insave/insane/insane/src/main/java/org/academiadecodigo/codezillas/insane/services/UserService.java
 /Users/codecadet/Desktop/insave/insane/insane/src/main/java/org/academiadecodigo/codezillas/insane/dtos/UserDto.java
 /Users/codecadet/Desktop/insave/insane/insane/src/main/java/org/academiadecodigo/codezillas/insane/dtos/UserDtoToUser.java
+/Users/codecadet/Desktop/insave/insane/insane/src/main/java/org/academiadecodigo/codezillas/insane/session/SessionDetails.java
 /Users/codecadet/Desktop/insave/insane/insane/src/main/java/org/academiadecodigo/codezillas/insane/persistence/daos/Dao.java
 /Users/codecadet/Desktop/insave/insane/insane/src/main/java/org/academiadecodigo/codezillas/insane/services/AccountService.java
 /Users/codecadet/Desktop/insave/insane/insane/src/main/java/org/academiadecodigo/codezillas/insane/persistence/model/Recruiter.java
