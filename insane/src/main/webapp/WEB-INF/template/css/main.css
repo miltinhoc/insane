@@ -98,19 +98,26 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-.navbar-brand {
-  font-family: 'Martel', serif;
+.navbar-light .navbar-brand {
+  font-family: 'Viga', sans-serif;
+  color: #4187B3;
 }
 
-.btn-primary {
+/* .btn-primary {
   color: #fff;
   background-color: #04830c;
   border-color: #007bff;
-}
+} */
 
 .logo {
-  color: green;
-  font-family: 'Martel', serif;
+  color: #4187B3;
+  font-family: 'Viga', sans-serif;
+  margin-top: 10px;
+}
+
+.tagline {
+  color: gray;
+  font-family: 'Viga', sans-serif;
 }
 
 .modalWrapper {
@@ -152,6 +159,43 @@ textarea {
   border-radius: 8px;
 }
 
+.carousel {
+  margin-bottom: 100px;
+}
+
+.intro {
+  color: gray;
+  font-size: 24px;
+  margin-bottom: 150px;
+}
+
+.header{
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.footer {
+  background-color: #F8F9FA;
+  height: 200px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.globe {
+  color: #4187B3;
+  font-size: 100px;
+  margin-top: 50px;
+}
+
+.social {
+  font-size: 50px;
+  color: gray;
+  margin-top: 100px;
+}
+
+.crossIcon {
+  margin-top: 100px;
+}
 
 
 
