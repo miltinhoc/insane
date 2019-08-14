@@ -309,40 +309,18 @@ textarea {
   -webkit-appearance: button; /* 1 */
   font: inherit; /* 2 */
 }
-
-/* Interactive
-   ========================================================================== */
-
-/*
- * Add the correct display in Edge, IE 10+, and Firefox.
- */
-
-details {
+tails {
   display: block;
 }
 
-/*
- * Add the correct display in all browsers.
- */
 
 summary {
   display: list-item;
 }
 
-/* Misc
-   ========================================================================== */
-
-/**
- * Add the correct display in IE 10+.
- */
-
 template {
   display: none;
 }
-
-/**
- * Add the correct display in IE 10.
- */
 
 [hidden] {
   display: none;
