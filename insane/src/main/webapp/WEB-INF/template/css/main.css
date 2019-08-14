@@ -97,6 +97,22 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+
+.navbar-brand {
+  font-family: 'Martel', serif;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #04830c;
+  border-color: #007bff;
+}
+
+.logo {
+  color: green;
+  font-family: 'Martel', serif;
+}
+
 .modalWrapper {
   padding-top: 100px;
 }
@@ -119,6 +135,21 @@ textarea {
 .search {
   margin-left: 400px;
   margin-bottom: 100px;
+}
+
+.photo {
+  background-color: lightgray;
+  height: 200px;
+}
+
+.data {
+}
+
+.profile {
+  border: 1px solid gray;
+  margin-top: 100px;
+  height: 200px;
+  border-radius: 8px;
 }
 
 
