@@ -7,10 +7,10 @@ import org.springframework.stereotype.Service;
 import java.util.*;
 
 @Service
-public class AccountService implements  UserService{
+public class AccountService implements UserService{
 
-    Set<User> usersAccounts = new LinkedHashSet<User>();
-
+    private int currentIndex = 0;
+    private Set<User> usersAccounts = new LinkedHashSet<User>();
 
     @Override
     public Set<User> getAll(){
@@ -33,7 +33,7 @@ public class AccountService implements  UserService{
     }
 
     public void saveOrUpdate(User user) {
-
+        user.setId(currentIndex+1);
        usersAccounts.add(user);
     }
 
@@ -49,4 +49,12 @@ public class AccountService implements  UserService{
        return usersFound;
     }
 
+    @Override
+    public int getCurrentIndex() {
+        return currentIndex;
+    }
+
+    public void setCurrentIndex(int currentIndex) {
+        this.currentIndex = currentIndex;
+    }
 }

@@ -7,6 +7,10 @@ public class User extends AbstractUser{
     private String disorder;
     private String mainSkill;
 
+    public User() {
+        //setId();
+    }
+
     public String getDisorder() {
         return disorder;
     }

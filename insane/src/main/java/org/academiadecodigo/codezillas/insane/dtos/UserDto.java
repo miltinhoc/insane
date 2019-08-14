@@ -5,35 +5,36 @@ import org.academiadecodigo.codezillas.insane.AccountType;
 import javax.validation.constraints.*;
 
 public class UserDto {
-    @NotNull(message = "Disorder is mandatory")
-    @NotBlank(message = "Disorder is mandatory")
+
     @Size(min = 3, max = 64)
     private String disorder;
-    //@NotNull(message = "Summary is mandatory")
-    //@NotBlank(message = "Summary is mandatory")
+
     @Size(min = 50, max = 200)
     private String summary;
-    @NotNull(message = "Mainskill is mandatory")
-    @NotBlank(message = "Mainskill is mandatory")
-    @Size(min = 3, max = 64)
+
     private String mainSkill;
 
     private Integer id;
+
     @NotNull(message = "firstName is mandatory")
     @NotBlank(message = "firstName is mandatory")
     @Size(min = 3, max = 64)
     private String firstName;
+
     @NotNull(message = "lastName is mandatory")
     @NotBlank(message = "lastName is mandatory")
     @Size(min = 3, max = 64)
     private String lastName;
+
     @NotNull(message = "Password is mandatory")
     @NotBlank(message = "Password is mandatory")
     @Size(min = 3, max = 64)
     private String password;
+
     @NotNull
     @Min(18)
     private Integer age;
+
     @Email
     @NotBlank(message = "Email is mandatory")
     private String email;

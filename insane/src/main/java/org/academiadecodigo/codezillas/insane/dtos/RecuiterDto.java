@@ -8,6 +8,7 @@ public class RecuiterDto {
     @NotBlank(message = "Companyname is mandatory")
     @Size(min = 3, max = 64)
     private String companyName;
+
     //@NotNull(message = "Summary is mandatory")
     //@NotBlank(message = "Summary is mandatory")
     @Size(min = 50, max = 200)

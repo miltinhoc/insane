@@ -8,10 +8,10 @@ import java.util.Set;
 
 public interface UserService {
 
-    public Set<User> getAll();
+    Set<User> getAll();
     User findById(Integer id);
     void delete(User user);
     void saveOrUpdate(User user);
     List<User> findBySkill(String skill);
-
+    public int getCurrentIndex();
 }

@@ -6,6 +6,7 @@ import org.academiadecodigo.codezillas.insane.dtos.UserToUserDto;
 import org.academiadecodigo.codezillas.insane.persistence.model.User;
 import org.academiadecodigo.codezillas.insane.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +28,6 @@ public class CustomerController {
 
     private UserToUserDto userToDto;
     private UserDtoToUser userDtoToUser;
-    private UserDtoToUser user;
 
     @Autowired
     public void setUserService(UserService userService) {
@@ -43,10 +44,9 @@ public class CustomerController {
         this.userDtoToUser = userDtoToUser;
     }
 
-
     @Autowired
-    public void setUser(UserDtoToUser user) {
-        this.user = user;
+    public void setUser(UserDtoToUser userDtoToUser) {
+        this.userDtoToUser = userDtoToUser;
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/recruiter")
@@ -66,17 +66,15 @@ public class CustomerController {
         return "index";
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = {"/recruiter"})
-    public String register(@Valid @ModelAttribute("user") UserDto userDto, BindingResult bindingResult) {
+    @RequestMapping(method = RequestMethod.POST, path = "/recruiter")
+    public String register(@Valid @ModelAttribute("user") UserDto userDto, BindingResult bindingResult, Res) {
 
-       /* if (bindingResult.hasErrors()) {
-            return "/404";
-        }*/
-       if (user == null){
-           return "404";
+       if (bindingResult.hasErrors()) {
+            return "404";
        }
-        userService.saveOrUpdate(userDtoToUser.user(userDto));
 
+        userService.saveOrUpdate(userDtoToUser.user(userDto));
+        //HttpSession httpSession =
         return "redirect:homepage";
     }
     /*

@@ -15,11 +15,9 @@ public class UserDtoToUser {
         this.userService = userService;
     }
 
-
-
     public User user(UserDto userDto) {
 
-        User user = (userDto.getId() != null ? userService.findById(userDto.getId()) : new User());
+        User user = (userService.findById(userDto.getId()) != null ? userService.findById(userDto.getId()) : new User());
 
         user.setFirstName(userDto.getFirstName());
         user.setLastName(userDto.getLastName());
@@ -28,7 +26,7 @@ public class UserDtoToUser {
         user.setCountry(userDto.getCountry());
         user.setAge(userDto.getAge());
         user.setEmail(userDto.getEmail());
-        user.setId(userDto.getId());
+        user.setId(userService.getCurrentIndex() + 1);
         user.setPassword(userDto.getPassword());
         user.setSummary(userDto.getSummary());
         user.setAccountType(userDto.getAccountType());
