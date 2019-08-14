@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
+  <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
   <!-- Place favicon.ico in the root directory -->
 
   <link rel="stylesheet" href="css/normalize.css">
@@ -53,7 +54,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col">
-          <h1 class="display-1 text-center">(in)sane</h1>
+          <h1 class="display-1 text-center">(in) SANE</h1>
       </div>
     </div>
   </div>
@@ -64,13 +65,13 @@
           <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="/img/download3.jpeg" class="d-block w-100" alt="...">
+                    <img src="img/download3.jpeg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                  <img src="..." class="d-block w-100" alt="...">
+                  <img src="img/download3.jpeg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                  <img src="..." class="d-block w-100" alt="...">
+                  <img src="img/download3.jpeg" class="d-block w-100" alt="...">
                 </div>
               </div>
             </div>
@@ -82,9 +83,9 @@
   
   
   <div id="login" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-md">
       <div class="modal-content">
-        <form>
+        <form class="p-3">
           <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -104,11 +105,18 @@
     <div class="modal-dialog modal-md">
       <div class="modal-content">
         <div class="container">
-          <div class="row">
-            <div class="col wrapper">
-              <button class="btn btn-primary my-2 my-sm-0" type="button" data-toggle="modal" data-target="#user">User</button>
-              <button class="btn btn-primary my-2 my-sm-0" type="button" data-toggle="modal" data-target="#recruiter">Recruiter</button>
+          <div class="row modal-body modal-wrapper">
+            <div class="col">
+              <p class="text-center mt-5">Modal body text goes here.</p>
             </div>
+          </div>
+          <div class="row">
+            <div class="col-6 buttonUserWrapper">
+              <button class="buttonUser btn btn-primary my-2 my-sm-0" type="button" data-toggle="modal" data-target="#user">User</button>
+          </div>
+          <div class="col-6 buttonRegisterWrapper">
+            <button class="buttonRegister btn btn-primary my-2 my-sm-0" type="button" data-toggle="modal" data-target="#recruiter">Recruiter</button>
+          </div>
           </div>
         </div>
       </div>
@@ -116,12 +124,12 @@
   </div>
 
   <div id="user" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-md">
       <div class="modal-content">
         <div class="container-fluid">
           <div class="row">
             <div class="col">
-                <form>
+                <form class="mt-4 mb-4">
                   <div class="form-row">
                     <div class="form-group col-sm-12">
                         <label for="First Name">First Name</label>
@@ -158,12 +166,12 @@
   </div>
 
   <div id="recruiter" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-md">
       <div class="modal-content">
         <div class="container-fluid">
           <div class="row">
             <div class="col">
-                <form>
+                <form class="mt-4 mb-4">
                   <div class="form-row">
                     <div class="form-group col-sm-12">
                         <label for="First Name">First Name</label>
