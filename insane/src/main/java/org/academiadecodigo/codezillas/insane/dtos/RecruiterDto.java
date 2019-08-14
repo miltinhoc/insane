@@ -26,18 +26,17 @@ public class RecruiterDto {
     @Size(min = 3, max = 64)
     private String firstName;
 
-    @NotNull(message = "Password is mandatory")
-    @NotBlank(message = "Password is mandatory")
-    @Size(min = 3, max = 64)
-    private String password;
-
     @NotNull(message = "Name is mandatory")
     @NotBlank(message = "Name is mandatory")
     @Size(min = 3, max = 64)
     private String lastName;
 
-    private Integer age;
+    @NotNull(message = "Password is mandatory")
+    @NotBlank(message = "Password is mandatory")
+    @Size(min = 3, max = 64)
+    private String password;
 
+    private Integer age;
     @Email
     @NotBlank(message = "Email is mandatory")
     private String email;
@@ -83,7 +82,7 @@ public class RecruiterDto {
         return firstName;
     }
 
-    public void setFirstName(String name) {
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
